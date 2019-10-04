@@ -1,4 +1,4 @@
-# Dada-GPA-Calculator
+# Dada GPA Calculator
 
 
 //  main.cpp
