@@ -1,14 +1,14 @@
-# Dada GPA Calculator
-
-
+// # Dada GPA Calculator
+//
 //  main.cpp
-//  Created by Daequan Leslie on 8/28/19.
+//  testing
+//
+//  Created by Daequan Leslie on 10/29/19.
 //  Copyright © 2019 Dada. All rights reserved.
 //
 
 #include <iostream>
 #include <string>
-
 
 struct Course{
     
@@ -23,14 +23,24 @@ struct Course{
 int main(){
     
     
-    Course c[2];
+    int size;
    
     std::cout << "Dada GPA Calculator \n";
+    
+    std::cout<< "Please enter number of classes";
+    
+    std::cin>> size;
+    
+    Course* c = nullptr;
+    
+    c = new Course[size];
+    
+    delete[] c;
     
     char again = 'Y';
   
 
-    for( int i =0; i<2; i++)
+    for( int i =0; i<size; i++)
     {
         
         std::cout << " \n Enter the name of course: \n";
@@ -158,7 +168,7 @@ int main(){
         }
     }
     
-    for(int q=0; q<2; q++){
+    for(int q=0; q<size; q++){
         std::cout<< "Course" << '\t' << '\t' <<(q+1) << std::endl;
         std::cout<< "Name: " << c[q].name << '\t' << '\t' << std::endl;
         std::cout<< "Grade: " << c[q].grade << '\t' << '\t' << std::endl;
@@ -169,7 +179,7 @@ int main(){
     double gpa = 0;
     int totalscore = 0;
     int totalcredits = 0;
-    for(int q=0; q<2; q++){
+    for(int q=0; q<size; q++){
         totalscore = totalscore+(c[q].grade* c[q].credits);
         totalcredits = totalcredits+c[q].credits;
     }
